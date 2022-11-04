@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 
-#define ACCEPT_CHALLENGE 1
+#define ACCEPT_CHALLENGE 0
 
 #if ACCEPT_CHALLENGE == 0
 
@@ -124,15 +124,13 @@ void generate_bases( int ** bases ){
 int main(){
 
    int i, j, k ;
-   int basei, basej, one_cnt, error, offset, occurrance;
+   int basei, basej, one_cnt, error, occurrance;
    int ** bases;
 
    bases = (int **) malloc(LOGN*sizeof(int *));
    for ( i = 0 ; i < LOGN ; i++ ) bases[i] = (int *) malloc(M*sizeof(int));
 
-
    // your soulution here
-
    generate_bases( bases );
 
    //check hamming distance
