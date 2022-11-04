@@ -181,24 +181,23 @@ int main(){
    }
 
    if ( error == 0 ){
-       printf("valid bases\n");
-   }
-
-   // print bases
-   printf("\n\nbases:\n");
-   for ( i = 0; i < LOGN ; i++ ){
-       for ( j = 0; j < M ; j++ ){
-           printf("%4d, ",bases[i][j]);
-           //printbin(bases[i][j],LOGN);
-           printf(" ");
-           if ( j == M/2-1){
-                printf("\n");
+       // print bases
+       printf("\n\nvalid bases:\n");
+       for ( i = 0; i < LOGN ; i++ ){
+           for ( j = 0; j < M ; j++ ){
+                printf("%4d, ",bases[i][j]);
+                //printbin(bases[i][j],LOGN);
+                printf(" ");
+                if ( j == M/2-1){
+                    printf("\n");
+                }
            }
+           printf("\n\n");
        }
-       printf("\n\n");
+       printf("\n");
+   } else {
+       printf("not valid bases\n");
    }
-   printf("\n");
-
 
    for ( i = 0 ; i < LOGN ; i++ ) free(bases[i]) ;
    free(bases);
